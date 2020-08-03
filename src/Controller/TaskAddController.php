@@ -20,6 +20,8 @@ class TaskAddController extends AbstractController
         if ($form->isSubmitted() && $form->isValid())
         {
             $task = $form->getData();
+            $user = $this->getUser();
+            $task->setUser($user);
             $manager->persist($task);
             $manager->flush();
             $this->addFlash('success', 'La tâche a été bien été ajoutée.');

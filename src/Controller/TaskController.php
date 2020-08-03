@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Controller;
+
+use App\Repository\TaskRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
+
+class TaskController extends AbstractController
+{
+    /**
+     * @Route("/task", name="AllTasks")
+     */
+    public function index(TaskRepository $taskRepository)
+    {
+        $task = $taskRepository->findBy(array('isDone'=>false), array('id' => 'DESC'));
+        return $this->render('task/index.html.twig', array('tasks'=>$task));
+    }
+}
