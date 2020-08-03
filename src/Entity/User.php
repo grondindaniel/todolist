@@ -41,6 +41,25 @@ class User implements UserInterface
      */
     private $tasks;
 
+    private $role;
+
+    /**
+     * @return mixed
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param mixed $role
+     */
+    public function setRole($role): void
+    {
+        $this->role = $role;
+    }
+
+
     public function __construct()
     {
         $this->tasks = new ArrayCollection();
