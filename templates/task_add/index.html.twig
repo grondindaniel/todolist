@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for message in  app.flashes('success') %}
+        <div class="alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in  app.flashes('warning') %}
+        <div class="alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <div class="modal-content">
+        <div class="container">
+            <h2 style=" text-align: center;">Ajouter une tâche</h2>
+            {{ form_start(form) }}
+            {{ form_label(form.title) }}
+            {{ form_widget(form.title) }}
+            {{ form_label(form.content) }}
+            {{ form_widget(form.content) }}
+            <div class="clearfix">
+                <a href="{{ path('AllTasks') }}"> <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Retour</button></a>
+                <button type="submit" class="signupbtn">Ajouter</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
+
