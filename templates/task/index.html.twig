@@ -49,6 +49,7 @@
                         </li>
                         <li style="height: 180px;text-align: justify">{{ task.content }}</li>
                         <li class="grey">
+                            {% if task.user.id is defined and app.user.id == task.user.id or app.user.roles[0] == "ROLE_ADMIN" %}
                                 <button type="submit" style="background-color: #FFFFFF;width: 104px;">
                                     <a href="{{ path('task_delete',  {'id' : task.id }) }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#e84118" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -61,6 +62,7 @@
                                         </svg>
                                     </a>
                                 </button>
+                            {% endif %}
                             <button type="submit" style="background-color: #FFFFFF;width: 104px;">
                                 <a href="{{ path('task_toggle',  {'id' : task.id }) }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#7351EB" fill="none" stroke-linecap="round" stroke-linejoin="round" style="">

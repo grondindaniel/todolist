@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2 style=" text-align: center;">Modifier un utilisateur</h2>
+    <div class="container" style="text-align:center; display: flex; justify-content: center;">
+        <div class="row">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit" class="btn btn-success pull-right">Modifier</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
