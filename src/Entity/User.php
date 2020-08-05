@@ -44,6 +44,11 @@ class User implements UserInterface
     private $role;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $email;
+
+    /**
      * @return mixed
      */
     public function getRole()
@@ -165,6 +170,18 @@ class User implements UserInterface
                 $task->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }
