@@ -12,7 +12,7 @@ class TaskDeleteController extends AbstractController
     /**
      * @Route("/tasks/{id}/delete", name="task_delete")
      */
-    public function deleteTaskAction(Task $task, EntityManagerInterface $manager)
+    public function deleteTask(Task $task, EntityManagerInterface $manager)
     {
         $manager->remove($task);
         $manager->flush();

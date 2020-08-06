@@ -12,7 +12,7 @@ class TaskToggleController extends AbstractController
     /**
      * @Route("/tasks/{id}/toggle", name="task_toggle")
      */
-    public function toggleTaskAction(Task $task, EntityManagerInterface $manager)
+    public function toggleTask(Task $task, EntityManagerInterface $manager)
     {
         $task->toggle(!$task->setIsDone());
         $manager->flush();
