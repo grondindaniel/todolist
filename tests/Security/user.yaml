@@ -1,0 +1,18 @@
+App\Entity\User:
+  user{1..10}:
+    username: user<current()>
+    email: user<current()>\@gmail.com
+    roles: [ROLE_USER]
+    password: "\\$argon2id\\$v=19\\$m=65536,t=4,p=1\\$xAbhx8Vfll1MnAS+qAYVwA\\$K57qXq3Kejk48dLORvsumNyeWKUzCMHAChJT4ElR+qw"
+
+  user:
+    username: "daniel"
+    roles: [ROLE_ADMIN]
+    email: "daniel.grondin@ac-nantes.fr"
+    password: "\\$argon2id\\$v=19\\$m=65536,t=4,p=1\\$xAbhx8Vfll1MnAS+qAYVwA\\$K57qXq3Kejk48dLORvsumNyeWKUzCMHAChJT4ElR+qw"
+
+App\Entity\Task:
+  task{1..10}:
+    title: task<current()>
+    content: task<current()>
+    user: '@user<numberBetween(1,10)>'
