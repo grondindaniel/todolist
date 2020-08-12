@@ -49,7 +49,7 @@
                         </li>
                         <li style="height: 180px;text-align: justify">{{ task.content }}</li>
                         <li class="grey">
-                            {% if task.user.id is defined and app.user.id == task.user.id %}
+                            {% if task.user.id is defined and app.user.id == task.user.id or app.user.roles[0] == "ROLE_ADMIN" and task.user.id is not defined %}
                                 <button type="submit" style="background-color: #FFFFFF;width: 104px;">
                                     <a href="{{ path('task_delete',  {'id' : task.id }) }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#e84118" fill="none" stroke-linecap="round" stroke-linejoin="round">
