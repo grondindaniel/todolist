@@ -34,6 +34,27 @@ Please, take a look to the readme it will explain to you how to install the proj
 Create your own branch with this command
 
     git branch [BranchName]
-    git checkout 
+    git checkout [BranchName]
 
+<h5>Afterward</h5>
+Make your developement, using SOLID code and PSR[1-2-4-7]. I really recommend to use Symfony CLI for the developpement.
+https://symfony.com/download
+
+<h5>Next point...really important</h5>
+Check the quality of your code by writing unit and functional tests. 
+
+Then with this command :
+    
+    ./bin/phpunit --coverage-html public/test-coverage
+
+You must have a coverage up to 70%.
+
+<h5>Your developement is finished ? </h5>
+Commit and push your own branch
+
+<h5>At the end</h5>
+Create a pull request. Take a look here to learn how to do :
+    
+    https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request
+    
 
