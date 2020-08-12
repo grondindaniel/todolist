@@ -27,7 +27,8 @@ class RegistrationController extends AbstractController
             $user->setPassword($passwordEncoder->encodePassword($user->setRoles([$role]), $form->get('password')->getData()));
             $entityManager->persist($user);
             $entityManager->flush();
-
+            $this->addFlash('registerOk', 'Enregistrement ok');
+            return $this->redirectToRoute('registration');
         }
 
         return $this->render('registration/index.html.twig', ['registrationForm' => $form->createView()]);
