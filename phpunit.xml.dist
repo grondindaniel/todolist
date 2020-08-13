@@ -25,12 +25,15 @@
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">src</directory>
             <exclude>
+                <file>src/CacheKernel.php</file>
+                <file>src/Kernel.php</file>
                 <directory>src/Repository</directory>
                 <directory>src/Migrations</directory>
                 <directory>src/DataFixtures</directory>
+                <file>src/Controller/ResetPasswordController.php</file>
+                <file>src/Form/ChangePasswordFormType.php</file>
+                <file>src/Form/ResetPasswordRequestFormType.php</file>
                 <directory>src/Service</directory>
-                <file>src/Kernel.php</file>
-                <file>src/CacheKernel.php</file>
             </exclude>
         </whitelist>
     </filter>
