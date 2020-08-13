@@ -13,6 +13,7 @@ class TaskDoneController extends AbstractController
      */
     public function index(TaskRepository $taskRepository)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $task = $taskRepository->findBy(array('isDone'=>true), array('id' => 'DESC'));
         return $this->render('task_done/index.html.twig', array('tasks'=>$task));
     }

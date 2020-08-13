@@ -14,6 +14,7 @@ class TaskToggleController extends AbstractController
      */
     public function toggleTask(Task $task, EntityManagerInterface $manager)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $task->toggle(!$task->setIsDone());
         $manager->flush();
         $this->addFlash('success', sprintf('La tâche %s a bien été marquée comme faite.', $task->getTitle()));

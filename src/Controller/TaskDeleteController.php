@@ -14,6 +14,7 @@ class TaskDeleteController extends AbstractController
      */
     public function deleteTask(Task $task, EntityManagerInterface $manager)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $manager->remove($task);
         $manager->flush();
         $this->addFlash('taskDeleteOk', 'La tâche a bien été supprimée.');

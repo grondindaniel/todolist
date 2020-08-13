@@ -16,6 +16,7 @@ class TaskEditController extends AbstractController
      */
     public function edit(Task $task, Request $request, EntityManagerInterface $manager)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $form = $this->createForm(TaskType::class, $task);
         $form->handleRequest($request);
 

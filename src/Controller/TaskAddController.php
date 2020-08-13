@@ -15,6 +15,7 @@ class TaskAddController extends AbstractController
      */
     public function addTask(Request $request, EntityManagerInterface $manager)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $form = $this->createForm(taskType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid())
