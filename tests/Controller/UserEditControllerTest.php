@@ -33,9 +33,9 @@ class UserEditControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/users/'.'5'.'/edit');
         $form = $crawler->selectButton('Modifier')->form();
 
-        $form['user_registration[username]'] = 'danieltest33';
-        $form['user_registration[email]'] = 'danieltest@user.com';
-        $form['user_registration[role]'] = 'ROLE_ADMIN';
+        $form['user[username]'] = 'danieltest33';
+        $form['user[email]'] = 'danieltest@user.com';
+        $form['user[role]'] = 'ROLE_ADMIN';
 
         $client->submit($form);
         $this->assertStringContainsString('Modification ok', $client->getResponse()->getContent());
