@@ -33,6 +33,7 @@
                 <file>src/Controller/ResetPasswordController.php</file>
                 <file>src/Form/ChangePasswordFormType.php</file>
                 <file>src/Form/ResetPasswordRequestFormType.php</file>
+                <file>src/Entity/ResetPasswordRequest.php</file>
                 <directory>src/Service</directory>
             </exclude>
         </whitelist>
