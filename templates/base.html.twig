@@ -16,6 +16,12 @@
 
         <style>
             body {font-family: Arial, Helvetica, sans-serif;}
+            .result {
+                background-color:#4CAF50;
+                border-color: #c3e6cb;
+                padding: 20px;
+                color: #FFFFFF;
+            }
             .switch {
                 position: relative;
                 display: inline-block;
@@ -443,9 +449,15 @@
 <body>
 
 <div class="navbar">
+    {% if app.user.id is defined %}
+    <a class="active" href="{{ path('AllTasks') }}">
+        <img src="{{ asset('img/Logo_OpenClassrooms.png') }}" alt="Todo&Co" width="50%"/>
+    </a>
+    {% else %}
     <a class="active" href="{{ path('home') }}">
         <img src="{{ asset('img/Logo_OpenClassrooms.png') }}" alt="Todo&Co" width="50%"/>
     </a>
+    {% endif %}
 
     {% if  is_granted('ROLE_ADMIN')  %}
         <!-- The overlay -->

@@ -16,7 +16,7 @@ class TaskDeleteController extends AbstractController
     {
         $manager->remove($task);
         $manager->flush();
-        $this->addFlash('success', 'La tâche a bien été supprimée.');
+        $this->addFlash('taskDeleteOk', 'La tâche a bien été supprimée.');
         return $this->redirectToRoute('AllTasks');
     }
 }

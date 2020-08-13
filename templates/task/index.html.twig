@@ -6,6 +6,17 @@
 
 {% block body %}
     <div class="container" style="margin-top: -150px;">
+
+        {% for message in  app.flashes('taskEditOk') %}
+            <div class="result">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% for message in  app.flashes('taskDeleteOk') %}
+            <div class="result">
+                {{ message }}
+            </div>
+        {% endfor %}
         <div class="icon-bar2">
             <a href="{{ path('AddTasks') }}" class="ico">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-plus" width="88" height="88" viewBox="0 0 24 24" stroke-width="1.5" stroke="#7351EB" fill="none" stroke-linecap="round" stroke-linejoin="round">

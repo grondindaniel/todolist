@@ -4,10 +4,17 @@
 
 {% block body %}
     <div class="modal-content">
+        {% for message in  app.flashes('registerOk') %}
+            <div class="result">
+                {{ message }}
+            </div>
+        {% endfor %}
         <div class="container">
+
             {% for flashError in app.flashes('verify_email_error') %}
                 <div class="alert-danger" role="alert">{{ flashError }}</div>
             {% endfor %}
+
             {{ form_start(registrationForm) }}
             {{ form_row(registrationForm.username) }}
             {{ form_row(registrationForm.email) }}

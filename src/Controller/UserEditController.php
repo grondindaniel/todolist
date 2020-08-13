@@ -34,6 +34,8 @@ class UserEditController extends AbstractController
             $role = $form->get('role')->getData();
             $user->setPassword($passwordEncoder->encodePassword($user->setRoles([$role]), $form->get('password')->getData()));
             $manager->flush();
+            $this->addFlash('editOk', 'Utilisateur modifié avec succés');
+            return $this->redirectToRoute('user_edit');
 
         }
 

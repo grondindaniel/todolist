@@ -22,7 +22,7 @@ class TaskEditController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $manager->flush();
 
-            $this->addFlash('success', 'La tâche a bien été modifiée.');
+            $this->addFlash('taskEditOk', 'La tâche a bien été modifiée.');
 
             return $this->redirectToRoute('AllTasks');
         }

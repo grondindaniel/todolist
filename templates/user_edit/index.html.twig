@@ -3,6 +3,11 @@
 {% block title %}Hello UserEditController!{% endblock %}
 
 {% block body %}
+    {% for message in  app.flashes('editOk') %}
+        <div class="result">
+            {{ message }}
+        </div>
+    {% endfor %}
     <div class="container">
         <h2>Choisir un utilisateur</h2>
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Saisir le nom d'utilisateur.." title="Saisir le nom d'utilisateur">
