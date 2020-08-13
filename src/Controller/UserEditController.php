@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserRegistrationType;
+use App\Form\UserType;
 use App\Repository\UserRepository;
 
 use Doctrine\ORM\EntityManagerInterface;
@@ -28,11 +29,11 @@ class UserEditController extends AbstractController
      */
     public function editAction(User $user, Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $passwordEncoder)
     {
-        $form = $this->createForm(UserRegistrationType::class, $user);
+        $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $role = $form->get('role')->getData();
-            $user->setPassword($passwordEncoder->encodePassword($user->setRoles([$role]), $form->get('password')->getData()));
+            $user->setRoles([$role]);
             $manager->flush();
             $this->addFlash('editOk', 'Utilisateur modifié avec succés');
             return $this->redirectToRoute('user_edit');
