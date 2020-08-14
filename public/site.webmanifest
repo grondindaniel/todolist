@@ -1,0 +1,11 @@
+{
+    "name": "todoco",
+    "short_name": "todoco",
+    "description": "School prject",
+    "orientation": "portrait-primary",
+    "scope": "/monapp/",
+    "start_url": "./",
+    "display": "standalone",
+    "theme_color": "white"
+
+}

@@ -1,7 +1,8 @@
 {
     "name": "grondindaniel/todoco",
     "type": "project",
-    "license": "proprietary",
+    "description": "Check yours tasks",
+    "license": "MIT",
     "require": {
         "php": "^7.4.8",
         "ext-ctype": "*",

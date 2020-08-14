@@ -1,5 +1,7 @@
 # todolist project
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/2f1016d052e389ea984d/maintainability)](https://codeclimate.com/github/grondindaniel/todolist/maintainability)
+
 ## How to install
 _________________
 
