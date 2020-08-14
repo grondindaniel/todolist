@@ -20,9 +20,8 @@ class TaskToggleControllerTest extends WebTestCase
         $users = $this->loadFixtureFiles([__DIR__ .'/user.yaml']);
         $user = $users['user'];
         $this->connect($client,$user);
-        $client->request('GET', '/tasks/4/toggle');
-
-        $this->assertSame(Response::HTTP_OK, $client->getResponse()->getStatusCode());
+        $client->request('GET', '/tasks/5/toggle');
+        $this->assertSame(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
 
     }
 }

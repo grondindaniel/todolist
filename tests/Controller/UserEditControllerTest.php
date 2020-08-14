@@ -6,6 +6,7 @@ namespace App\Tests\Controller;
 use App\Tests\TraitConnect;
 use Liip\TestFixturesBundle\Test\FixturesTrait;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Response;
 
 
 class UserEditControllerTest extends WebTestCase
@@ -38,9 +39,7 @@ class UserEditControllerTest extends WebTestCase
         $form['user[role]'] = 'ROLE_ADMIN';
 
         $client->submit($form);
-        $this->assertStringContainsString('Modification ok', $client->getResponse()->getContent());
-
-        echo $client->getResponse()->getContent();
+        $this->assertSame(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
 
     }
 
