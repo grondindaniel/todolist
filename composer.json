@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
     "name": "grondindaniel/ToDo&Co",
-=======
-    "name": "ToDoCo",
->>>>>>> 587cca4beac86493991bd1281a97dae925d3b965
     "type": "project",
     "license": "proprietary",
     "require": {
