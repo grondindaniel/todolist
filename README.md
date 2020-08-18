@@ -52,7 +52,7 @@ _________________
 
 ### First
 
-    in .env.test file configure your own database db_name, db_user and db_password with yours credentials :
+    in .env.test file configure your own database db_name (not the same that the prod database), db_user and db_password with yours credentials :
 
     DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7
     
