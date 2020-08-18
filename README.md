@@ -5,7 +5,7 @@
 ## How to install
 _________________
 
-<h4>Requirements</h4>
+### Requirements
 
     * PHP >= 7.4.8
     * MySQL 5.7
@@ -13,7 +13,7 @@ _________________
     * For the server i recommend to use Symfony CLI 
     (if you want https in local run : symfony server:ca:install)
     
-<h4>First in your terminal </h4>
+### First in your terminal
 
     git clone https://github.com/grondindaniel/todolist.git
 
@@ -21,13 +21,13 @@ _________________
 
     composer install 
 
-<h4>Next </h4>
+### Next
 
     in .env file configure your own database db_name, db_user and db_password with yours credentials :
 
     DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7
 
-<h4>Then </h4>
+### Then
 
     php bin/console doctrine:database:create
 
@@ -37,7 +37,7 @@ _________________
 
     php bin/console doctrine:fixtures:load
 
-<h4>Finally, credentials for using the app</h4>
+### Finally, credentials for using the app
 
     username : root
     password : Xkeyscore
@@ -50,19 +50,19 @@ _________________
     
  ## For testing the app
 
-<h4>First </h4>
+### First
 
     in .env.test file configure your own database db_name, db_user and db_password with yours credentials :
 
     DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7
     
-<h4>Then </h4>
+### Then
 
     php bin/console doctrine:database:create --env=test
 
     php bin/console doctrine:schema:create --env=test
 
-<h4>Finally in your terminal just run</h4>
+### Finally in your terminal just run
 
     ./bin/phpunit
 it will updates some dependencies and all fixtures will be load with user.yaml.
